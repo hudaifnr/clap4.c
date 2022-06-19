@@ -1,45 +1,30 @@
-#include <stdio.h>
-#include <string.h>
- 
-struct Books {
-   char  title[50];
-   char  author[50];
-   char  subject[100];
-   int   book_id;
-};
-
-/* function declaration */
-void printBook( struct Books *book );
-int main( ) {
-
-   struct Books Book1;        /* Declare Book1 of type Book */
-   struct Books Book2;        /* Declare Book2 of type Book */
- 
-   /* book 1 specification */
-   strcpy( Book1.title, "C Programming");
-   strcpy( Book1.author, "Nuha Ali"); 
-   strcpy( Book1.subject, "C Programming Tutorial");
-   Book1.book_id = 6495407;
-
-   /* book 2 specification */
-   strcpy( Book2.title, "Telecom Billing");
-   strcpy( Book2.author, "Zara Ali");
-   strcpy( Book2.subject, "Telecom Billing Tutorial");
-   Book2.book_id = 6495700;
- 
-   /* print Book1 info by passing address of Book1 */
-   printBook( &Book1 );
-
-   /* print Book2 info by passing address of Book2 */
-   printBook( &Book2 );
-
-   return 0;
-}
-
-void printBook( struct Books *book ) {
-
-   printf( "Book title : %s\n", book->title);
-   printf( "Book author : %s\n", book->author);
-   printf( "Book subject : %s\n", book->subject);
-   printf( "Book book_id : %d\n", book->book_id);
-}
+#include<stdio.h>  
+#include <string.h>    
+struct employee      
+{   int id;      
+    char name[50];      
+    float salary;      
+}e1,e2;  //declaring e1 and e2 variables for structure    
+int main( )    
+{    
+   //store first employee information    
+   e1.id=101;    
+   strcpy(e1.name, "Sonoo Jaiswal");//copying string into char array    
+   e1.salary=56000;    
+    
+  //store second employee information    
+   e2.id=102;    
+   strcpy(e2.name, "James Bond");    
+   e2.salary=126000;    
+     
+   //printing first employee information    
+   printf( "employee 1 id : %d\n", e1.id);    
+   printf( "employee 1 name : %s\n", e1.name);    
+   printf( "employee 1 salary : %f\n", e1.salary);    
+    
+   //printing second employee information    
+   printf( "employee 2 id : %d\n", e2.id);    
+   printf( "employee 2 name : %s\n", e2.name);    
+   printf( "employee 2 salary : %f\n", e2.salary);    
+   return 0;    
+}    
